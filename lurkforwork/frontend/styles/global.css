@@ -1,0 +1,154 @@
+/* base styles, feel free to edit */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial;
+    min-height: 100vh;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+
+
+}
+.login-header {
+    padding-top: 100px;
+    text-align: center;
+}
+.login-form {
+    width: 30%;
+    padding: 30px;
+    margin: auto;
+    border: solid 1px #d0dae0;
+    border-radius: 10px ;
+    background-color: #f5f8fa;
+}
+
+#login-submit {
+    margin-top: 20px;
+    width: 100%;
+}
+#register-submit {
+    margin-top: 20px;
+    width: 100%;
+}
+#profile-btn:hover {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    min-width: 5px !important;
+    float: right;
+}
+.dropdown-item:hover {
+    cursor: pointer;
+}
+.btns-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#create-post {
+    width: 50%;
+    margin: 0 auto;
+    border: solid 1px #d0dae0;
+    border-radius: 10px ;
+
+}
+
+#post-submit {
+    width: 100%;
+}
+.hide {
+    display: none;
+}
+
+.card {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.job-icons-container {
+    align-items: center;
+    border-radius: 8px;
+    width: 120px;
+    height: auto;
+}
+
+.job-icons-container:hover {
+    cursor: pointer;
+    background-color: #cfcece;
+    transition: 0.5s;
+}
+.link:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.img-fluid {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+
+.profile-left {
+    justify-content: center;
+}
+
+
+.user-email {
+    margin-top: 40px;
+}
+.user-name {
+    margin-top: 40px;
+}
+
+.edit-btn {
+    margin-left: 80%;
+    width: 20%;
+}
+.update-btn {
+    margin-left: 60%;
+    margin-right: 20px;
+    width: 20%;
+}
+.delete-button {
+    width: 20%;
+}
+.btn-container {
+    display: flex;
+}
+#edit-submit {
+    width: 100%;
+}
+
+.icon-flex {
+    display: flex;
+}
+
+.comment-number {
+    margin-right: 0;
+}
+
+.show-amounts {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar {
+    justify-content: space-between;
+}
+
+.comment-area {
+    width: 100%;
+}
+.comment-submit {
+    width: 100%;
+}
+.btn {
+    margin: 2px;
+}

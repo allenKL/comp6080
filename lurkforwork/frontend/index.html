@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d71aae3d4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+</head>
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">LurkForWork</a>
+            <div class="btns-div">
+                <button class="btn btn-outline-success" id="login-btn" >Login</button>
+                <button class="btn btn-outline-success" id="register-btn">Register</button>
+                <button class="btn btn-outline-success hide" id="feed-btn">Feeds</button>
+                <button type="button" id="my-profile-btn" class="btn btn-outline-success hide">My profile</button>
+                <button type="button" id="logout-btn" class="btn btn-outline-success hide">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="login-page" >
+        <h2 class="login-header">Login to LurkForWork</h2>
+        <div class="login-form">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="login-password">
+                </div>
+                <button id="login-submit" type="button" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-page" class="hide" >
+        <h2 class="login-header">Welcome to LurkForWork!</h2>
+        <div class="login-form">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp">
+                    <div id="emailHelp-register" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Name</label>
+                    <input type="password" class="form-control" id="register-name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="register-password">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Confirm password</label>
+                    <input type="password" class="form-control" id="register-password-confirm">
+                </div>
+                <button id="register-submit" type="button" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="feed-page-nav" class="hide" >
+        <h1>Jobs are listed below!</h1>
+        <div>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#create-post" aria-expanded="false" aria-controls="create-post">
+                <i class="fa-regular fa-comment" ></i>Make a new post
+            </button> 
+        </div>
+        <div class="collapse" id="create-post">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Title</span>
+                <input id="title-input" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input id="image-input" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Job description</span>
+                <textarea id="description-input" class="form-control" aria-label="With textarea"></textarea>
+            </div>
+            <button id="post-submit" type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#create-post" aria-expanded="false" aria-controls="create-post">Submit</button>
+        </div>
+    </div>
+<!-- feed page template -->
+    <div id="feed-page" class="hide">
+        <div id="feed-box" class="hide">
+            <div class="card mb-3">
+                <img class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This content is a little bit longer.</p>
+                    <div class="show-amounts">
+                        <div>
+                            <a class="link">122 likes</a>
+                        </div>
+                        <div>
+                            <a class="link"  data-bs-toggle="collapse" data-bs-target=".collapseExample" aria-expanded="false" aria-controls="collapseExample">342 comments</a>
+                        </div>
+                    </div>
+                    <div class="icon-flex">
+                        <button type="button" class="btn btn-outline-secondary"><i class="fa-regular fa-heart" ></i>Like</button>
+                        <button type="button" class="btn btn-outline-secondary hide"><i class="fa-solid fa-heart" ></i>Like</button>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fa-regular fa-comment" ></i>Comment</button>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+<!-- feed page collapse -->
+
+        <div class="collapse" id="collapseComment">
+            <div class="card card-body">
+                <textarea id="description-input" class="form-control" aria-label="With textarea"></textarea>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComment" aria-expanded="false" aria-controls="collapseExample">
+                    Submit
+                </button>
+            </div>
+        </div>
+
+        <!-- modal of click comment and like amount-->
+        <div class="modal fade" id="amountModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    
+    <div id="profile-page" class="hide" >
+        <div class="card mb-3 hid" style="max-width: 840px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img class="img-fluid" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <h5 class="user-email">James</h5>
+                    <p class="user-name">James100222@gmail.com.</p>
+                    <button type="button" class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editModal">
+                        Edit
+                    </button>
+                </div>
+                <div class="show-amounts">
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary"><i class="fa-regular fa-eye"></i>Watch</button>
+                        <button type="button" class="btn btn-outline-secondary hide"><i class="fa-solid fa-eye"></i>"></i>Watch</button>
+                    </div>
+                    <div>
+                        <a href="#" class="link">32 watches</a>
+                    </div>
+                </div>
+                
+                    
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Edit your personal details</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Name</span>
+                        <input id="edit-name" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input id="edit-email" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Password</span>
+                        <input id="edit-password" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input id="edit-image" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <button id="edit-submit" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Update the job</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Title</span>
+                        <input id="update-title" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input id="update-image" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Job description</span>
+                        <textarea id="update-description" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <button id="update-submit" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+        <div class="toast" data-bs-delay="3000">
+            <div class="toast-header">
+                <strong class="me-auto">Notice</strong>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script type="module" src="src/main.js"></script>
+    
+</body>
+</html>
